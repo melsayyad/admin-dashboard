@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #0d0f1a;
+    display: flex;
+}
+
+/* ====== Profile Section ====== */
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #e0e0e0;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.img-box:hover {
+    transform: scale(1.1);
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-name {
+    font-size: 20px;
+    margin-top: 8px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ====== Animation Keyframes ====== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== Sidebar Menu ====== */
+
+.menu {
+    background-color: #1c1f38;
+    width: 60px;
+    height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.menu:hover {
+    width: 260px;
+    transition: 0.5s;
+}
+
+ul {
+    list-style: none;
+    position: relative;
+    height: 95%;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    transition: 0.5s;
+}
+
+ul li a:hover,
+.active {
+    background-color: #3b3f61;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.logout a {
+    background-color: #c11717;
+}
+
+ul li a i {
+    font-size: 20px;
+}
+
+/* في الوضع العادي (sidebar صغير) نخفي النصوص */
+.menu ul li a p,
+.profile-name {
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+/* لما يحصل hover على .menu نُظهر النصوص */
+.menu:hover ul li a p,
+.menu:hover .profile-name {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ممكن تقللي الـ gap لما تكون القائمة صغيرة */
+.menu ul li a {
+    gap: 0;
+}
+
+/* نكبر الـ gap لما القائمة تكبر */
+.menu:hover ul li a {
+    gap: 20px;
+}
+
+/* ====== Main Content ====== */
+
+.content {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column; /* خلي المحتوى ينزل تحت بعضه */
+    gap: 20px; /* مسافة بين الكروت والأنشطة */
+}
+
+.title-info {
+    background-color: #4a3c8a55;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.data-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.data-info .box {
+    height: 150px;
+    background-color: #2e3577;
+    flex-basis: 150px;
+    flex-grow: 1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.data-info .box:hover {
+    background-color: #3f4c9b;
+}
+
+.data-info .box i {
+    font-size: 40px;
+}
+
+.data-info .box .data {
+    text-align: center;
+}
+
+.data-info .box .data span {
+    font-size: 30px;
+}
+
+/* ====== Activities Section ====== */
+
+.activities {
+    background-color: #1e2140;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.activity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.activity i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #f1f1f1;
+}
+
+.activity .text p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.activity .text span {
+    font-size: 12px;
+    color: #aaa;
+}
